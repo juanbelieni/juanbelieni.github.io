@@ -1,0 +1,74 @@
+baseURL: https://juanbelieni.github.io/
+languageCode: en-us
+title: Juan Belieni
+theme:
+- PaperMod
+
+params:
+  env: production
+  keywords: [Blog, Portfolio, Lab]
+  author: Juan Belieni
+  DateFormat: "2006-01-01"
+  defaultTheme: auto
+
+  disableScrollToTop: true
+
+  # Post elements
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+
+  # RSS
+  ShowRssButtonInSectionTermList: true
+  ShowFullTextinRSS: true
+
+  # Home mode
+  homeInfoParams: # TODO: change this
+    Title: Hi!
+    Content:
+      I'm an Data Science and AI undergrad student at [FGV/EMAp](https://emap.fgv.br/en). Here I will (try) to post some topics i'm studying and researching related to machine learning, deep learning and programming.
+  socialIcons:
+    - name: github
+      url: "https://github.com/juanbelieni"
+    # - name: email
+    #   url: "mailto:juanbelieni@gmail.com"
+    - name: rss
+      url: "/index.xml"
+
+  cover:
+    hidden: true
+
+  editPost:
+    URL: "https://github.com/juanbelieni/juanbelieni/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  # Search (https://fusejs.io/api/options.html)
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+# Menu
+menu:
+  main:
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 10
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 20
+
+# Syntax highlighting
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    lineNos: true
