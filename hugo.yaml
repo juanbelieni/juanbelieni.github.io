@@ -1,6 +1,7 @@
 baseURL: https://juanbelieni.github.io/
 languageCode: en-us
 title: Juan Belieni
+enableEmoji: true
 theme:
 - PaperMod
 
@@ -8,16 +9,15 @@ params:
   env: production
   keywords: [Blog, Portfolio, Lab]
   author: Juan Belieni
-  DateFormat: "2006-01-01"
+  DateFormat: "2006-01-02"
   defaultTheme: auto
 
   disableScrollToTop: true
 
-  # Post elements
+  # Posts
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
-  ShowWordCount: true
 
   # RSS
   ShowRssButtonInSectionTermList: true
@@ -26,13 +26,14 @@ params:
   # Home mode
   homeInfoParams: # TODO: change this
     Title: Hi!
-    Content:
-      I'm an Data Science and AI undergrad student at [FGV/EMAp](https://emap.fgv.br/en). Here I will (try) to post some topics i'm studying and researching related to machine learning, deep learning and programming.
+    Content: |
+      I'm an Data Science and AI undergrad student at [FGV/EMAp](https://emap.fgv.br/en).
+      Here I will (try) to post about topics i'm studying, like machine learning, math and programming.
   socialIcons:
     - name: github
       url: "https://github.com/juanbelieni"
-    # - name: email
-    #   url: "mailto:juanbelieni@gmail.com"
+    - name: email
+      url: "mailto:juanbelieni@gmail.com"
     - name: rss
       url: "/index.xml"
 
@@ -40,7 +41,7 @@ params:
     hidden: true
 
   editPost:
-    URL: "https://github.com/juanbelieni/juanbelieni/content"
+    URL: "https://github.com/juanbelieni/juanbelieni.github.io/blob/main/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
@@ -68,7 +69,3 @@ menu:
 
 # Syntax highlighting
 pygmentsUseClasses: true
-markup:
-  highlight:
-    noClasses: false
-    lineNos: true
