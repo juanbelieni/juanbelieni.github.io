@@ -1,8 +1,8 @@
 ---
 title: 'Meta: a declarative way to specify project script aliases'
 tags:
-  - Programming
-  - Scripting
+- Programming
+- Scripting
 date: 2023-12-20
 draft: true
 math: true

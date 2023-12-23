@@ -5,6 +5,10 @@ enableEmoji: true
 theme:
 - PaperMod
 
+taxonomies:
+  tag: tags
+  series: series
+
 params:
   env: production
   keywords: [Blog, Portfolio, Lab]
@@ -53,19 +57,29 @@ params:
     distance: 1000
     threshold: 0.4
     minMatchCharLength: 0
-    keys: ["title", "permalink", "summary", "content"]
+    keys: ["title", "series", "tags", "permalink", "summary", "content"]
 
-# Menu
 menu:
   main:
     - identifier: tags
       name: Tags
       url: /tags/
       weight: 10
+    # - identifier: series
+    #   name: Series
+    #   url: /series/
+    #   weight: 15
     - identifier: search
       name: Search
       url: /search/
       weight: 20
+
+markup:
+  goldmark:
+    parser:
+      attribute:
+        block: true
+        title: true
 
 # Syntax highlighting
 pygmentsUseClasses: true
