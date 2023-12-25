@@ -2,7 +2,7 @@
 title: 'My Linux Setup for 2024'
 tags:
 - Linux
-date: 2023-12-23
+date: 2023-12-25
 ---
 
 Throughout 2023, I did a lot of changes on my Linux setup, the major one being migrating most of my workflow into one more focused on terminal-based softwares. Here I will try to document what changes I've made and what I pretend to change in the next year.

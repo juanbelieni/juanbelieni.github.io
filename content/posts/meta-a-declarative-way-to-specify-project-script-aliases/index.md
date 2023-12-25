@@ -5,7 +5,6 @@ tags:
 - Scripting
 date: 2023-12-20
 draft: true
-math: true
 ---
 
 For the most part of the programming projects I am working, I like to specify some aliases for common scripts. Them problem is... I have never been satisfied on how to specify such aliases. On JavaScript projects with Node, it is possible to user the `package.json` scripts property, but this approach is obviously language-specific and cannot be used on other types of projects.
