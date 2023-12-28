@@ -14,3 +14,20 @@ weight = 50
 [main.params]
 action = "search"
 icon = "search"
+
+[[footer]]
+name = "GitHub"
+url = "https://github.com/juanbelieni"
+weight = 10
+[footer.params]
+icon = "github"
+target = "_blank"
+
+[[footer]]
+name = "Email"
+url = "mailto:juanbelieni@gmail.com"
+weight = 20
+[footer.params]
+icon = "email"
+target = "_blank"
+

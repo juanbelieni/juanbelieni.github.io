@@ -1,7 +1,8 @@
 ---
-title: 'My Linux Setup for 2024'
+title: 'My Linux setup for 2024'
 tags:
 - Linux
+- Terminal
 date: 2023-12-26
 ---
 

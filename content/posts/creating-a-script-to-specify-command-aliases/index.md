@@ -1,12 +1,13 @@
 ---
-title: 'Creating a custom script to specify project script aliases'
+title: 'Creating a script to specify command aliases'
 tags:
 - Programming
 - Scripting
+- Terminal
 date: 2023-12-27
 ---
 
-For the most part of the programming projects I am working, I like to specify some aliases for common scripts. Them problem is... I have never been satisfied on how to specify such aliases. On JavaScript projects with Node, it is possible to user the `package.json` scripts property, but this approach is obviously language-specific and cannot be used on other types of projects.
+For the most part of the programming projects I am working, I like to specify some aliases for common terminal commands. Them problem is... I have never been satisfied on how to specify such aliases. On JavaScript projects with Node, it is possible to user the `package.json` scripts property, but this approach is obviously language-specific and cannot be used on other types of projects.
 
 On other languages, I usually _make_ the use of [GNU Make](https://www.gnu.org/software/make/), which can be not ideal for some specific cases, like when it is needed to specify arguments. In fact, [it is possible to pass arguments](https://stackoverflow.com/questions/2826029/passing-additional-variables-from-command-line-to-make), but it is still not the best solution for me, because I don't have the control over which parameters are allowed to be passed. I even tried to use Python with [argparse](https://docs.python.org/3/library/argparse.html) library directly one time, but they are totally overkill for this task.
 
