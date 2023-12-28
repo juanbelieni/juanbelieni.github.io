@@ -2,7 +2,7 @@
 title: 'My Linux Setup for 2024'
 tags:
 - Linux
-date: 2023-12-25
+date: 2023-12-26
 ---
 
 Throughout 2023, I did a lot of changes on my Linux setup, the major one being migrating most of my workflow into one more focused on terminal-based softwares. Here I will try to document what changes I've made and what I pretend to change in the next year.
@@ -11,8 +11,7 @@ Throughout 2023, I did a lot of changes on my Linux setup, the major one being m
 
 At the end of 2022, I migrated to Arch Linux, and I think I will continue to use it this year, since I don't have the time to distro hop in the next months. However, If I would change, maybe I would try some Arch-based distro, Void Linux, NixOS or Gentoo. But the main reasons I will continuing using it are related to the package management and the wiki, they are still unbeatable for me.
 
-![I use Arch, btw](https://i.kym-cdn.com/photos/images/original/002/243/395/bcd.jpg)
-{style="width: min(100%, calc(var(--main-width) * 0.6)); margin: auto"}
+![I use Arch, btw](https://i.kym-cdn.com/entries/icons/original/000/038/795/tco_-_2021-11-09T131430.682.jpg)
 
 ## Window manager
 

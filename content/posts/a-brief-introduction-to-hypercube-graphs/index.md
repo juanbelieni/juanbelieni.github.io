@@ -13,14 +13,15 @@ An hypercube graph $Q_d$ is a [$d$-regular](https://en.wikipedia.org/wiki/Regula
 
 Hypercube graphs can be defined in two (equivalent) ways. The first definition uses the [Cartesian product of graphs](https://en.wikipedia.org/wiki/Cartesian_product_of_graphs) operation ($\times$):
 
-
-> **Def. 1 of hypercube graphs**: The $d$-cube graph $Q_d$ can be defined recursively as
-> $$
-  \begin{align*}
-  Q_1 & = K_2, \\\\
-  Q_d & = K_2 \times Q_{d - 1}.
-  \end{align*}
+{{< alert pencil >}}
+**Def. 1 of hypercube graphs**: the $d$-cube graph $Q_d$ can be defined recursively as
 $$
+\begin{align*}
+Q_1 & = K_2, \\\\
+Q_d & = K_2 \times Q_{d - 1}.
+\end{align*}
+$$
+{{< /alert >}}
 
 In this definition, $K_2$ is the complete graph with 2 nodes. In Python, using [NetworkX](https://networkx.org/), we can use it like this:
 
@@ -39,7 +40,9 @@ def hypercube_graph(d):
 
 The second definition treat each node $v$ in as a sequence of 0s and 1s of length $d$:
 
-> **Def. 2 of hypercube graphs**: Let $Q_d$ be a graph. $Q_d$ is called the $d$-cube graph if $V(Q_d)$ is all the sequences $( p_i )_{i = 1}^d$, $p_i \in \\{ 0, 1 \\}$, and $\\{ u, v \\} \in E(Q_d)$ iff $u$ and $v$ differ by exactly one position on their sequences.
+{{< alert pencil >}}
+**Def. 2 of hypercube graphs**: let $Q_d$ be a graph. $Q_d$ is called the $d$-cube graph if $V(Q_d)$ is all the sequences $( p_i )_{i = 1}^d$, $p_i \in \\{ 0, 1 \\}$, and $\\{ u, v \\} \in E(Q_d)$ iff $u$ and $v$ differ by exactly one position on their sequences.
+{{< /alert >}}
 
 We can also write a Python script to generate graphs with this definition:
 

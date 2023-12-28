@@ -1,0 +1,30 @@
+colorScheme = "congo"
+
+enableSearch = true
+enableCodeCopy = true
+enableImageLazyLoading = true
+
+[header]
+layout = "hybrid"
+showTitle = true
+
+[footer]
+showCopyright = true
+showThemeAttribution = true
+showAppearanceSwitcher = true
+showScrollToTop = true
+
+[homepage]
+showRecent = true
+
+[article]
+showTableOfContents = true
+showTaxonomies = true
+showReadingTime = false
+showWordCount = true
+showPagination = true
+showAuthor = false # TODO: change after
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+

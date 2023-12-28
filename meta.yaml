@@ -4,3 +4,5 @@ cspell: cspell content/posts/**/*.md
 new:
   args: ["name"]
   command: hugo new posts/{{name}}/index.md
+
+update-theme: hugo mod get -u
