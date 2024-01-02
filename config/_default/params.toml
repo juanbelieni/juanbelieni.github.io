@@ -23,8 +23,10 @@ showTaxonomies = true
 showReadingTime = false
 showWordCount = true
 showPagination = true
-showAuthor = false # TODO: change after
+showAuthor = false
 
 [outputs]
 home = ["HTML", "RSS", "JSON"]
 
+[verification]
+google = "d-YbOFu2nkyxHfUzEkdaGfe-8awI9qvFcCxNS5mXBD8"
