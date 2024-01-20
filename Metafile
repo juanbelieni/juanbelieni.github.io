@@ -1,0 +1,11 @@
+serve:
+	hugo serve --buildDrafts --buildFuture
+
+new: name
+	hugo new posts/$name/index.md
+
+cspell:
+	cspell content/posts/**/*.md
+
+update-theme:
+	hugo mod get -u

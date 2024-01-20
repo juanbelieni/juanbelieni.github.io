@@ -63,7 +63,7 @@ instance : Add Peano where
 
 #### Associativity
 
-The associative property $(a + b) + c = a + (b + c)$ can be proofd by induction on the number $c$:
+The associative property $(a + b) + c = a + (b + c)$ can be proven by induction on the number $c$:
 
 ```lean
 @[simp]
