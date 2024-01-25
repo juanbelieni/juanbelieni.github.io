@@ -8,7 +8,7 @@ date: 2024-01-10
 math: true
 ---
 
-In this post, I will define the natural numbers using using the [Peano axioms](https://en.wikipedia.org/wiki/Peano_axioms), which will be referred to here as Peano numbers, and proof that the set of natural numbers $\N$ equipped with ordinary addition and multiplication is a [commutative semiring](https://en.wikipedia.org/wiki/Semiring#Commutative_semirings), i.e., that $(\N, +, 0)$ and $(\N, \cdot, 1)$ are both [commutative monoids](https://en.wikipedia.org/wiki/Monoid#Commutative_monoid) such that $a \cdot 0 = 0$ and $a \cdot (b + c) = a \cdot b + a \cdot c$.
+In this post, I will define the natural numbers using using the [Peano axioms](https://en.wikipedia.org/wiki/Peano_axioms), which will be referred to here as Peano numbers, and prove that the set of natural numbers $\N$ equipped with ordinary addition and multiplication is a [commutative semiring](https://en.wikipedia.org/wiki/Semiring#Commutative_semirings), i.e., that $(\N, +, 0)$ and $(\N, \cdot, 1)$ are both [commutative monoids](https://en.wikipedia.org/wiki/Monoid#Commutative_monoid) such that $a \cdot 0 = 0$ and $a \cdot (b + c) = a \cdot b + a \cdot c$.
 
 The purpose of this post is to explore Lean's capabilities in helping prove some simple theorems related to algebra.
 
@@ -47,7 +47,7 @@ This is because we would have to define the additive inverse $-a$ s.t. $a - a = 
 
 ## Proving the properties in Lean
 
-Now, we can start to proof all the described properties in Lean. I will not make the use of any library, like [mathlib4](https://github.com/leanprover-community/mathlib4), so everything will be done in vanilla Lean 4.
+Now, we can start to prove all the described properties in Lean. I will not make the use of any library, like [mathlib4](https://github.com/leanprover-community/mathlib4), so everything will be done in vanilla Lean 4.
 
 ### Addition-related properties
 
@@ -80,7 +80,7 @@ Here, `rfl` stands for reflexivity, a Lean tactic that tries to close the curren
 
 #### Identity element
 
-The identity element for addition is 0, so we have to proof that $a + 0 = a$. I will also proof that $0 + a = a$, which will be useful when showing the proof for the addition commutativity.
+The identity element for addition is 0, so we have to prove that $a + 0 = a$. I will also prove that $0 + a = a$, which will be useful when showing the proof for the addition commutativity.
 
 For the right-identity, we can simply use the `rfl` tactic, because Lean will match $a + 0$ with the addition definition:
 
@@ -105,8 +105,8 @@ theorem left_add_identity (a : Peano) : _0 + a = a := by
 #### Commutativity
 
 The commutative property of addition can be divided into two steps:
-1. proof the property for a natural number $a$ and $1$ ($a + 1 = 1 + a$).
-2. From the last property, proof the same but for all pairs of natural numbers ($a + b = b + a$).
+1. prove the property for a natural number $a$ and $1$ ($a + 1 = 1 + a$).
+2. From the last property, prove the same but for all pairs of natural numbers ($a + b = b + a$).
 
 The first step can be done with induction on the number $a$, very similar to the `left_add_identity` proof:
 
@@ -150,7 +150,7 @@ instance : Mul Peano where
 
 #### Identity and annihilating elements
 
-Similar to the addition identity element proofs, I will show the identity ($a * 1 = 1$) and annihilating ($a \cdot 0 = 0$) element property for both sides:
+Similar to the addition identity element proofs, I will show the identity ($a \cdot 1 = 1$) and annihilating ($a \cdot 0 = 0$) element property for both sides:
 
 ```lean
 @[simp]
