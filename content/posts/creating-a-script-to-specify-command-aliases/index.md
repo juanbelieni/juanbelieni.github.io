@@ -13,6 +13,11 @@ On other languages, I usually _make_ the use of [GNU Make](https://www.gnu.org/s
 
 Moreover, it would be nice to be able to see a help description with the scripts and which arguments can be passed. Because of that, I created a very simple script named Meta[^meta].
 
+
+{{< alert >}}
+The version of the script that I show here is made with Python, but I've refactored it with Go, which is available in the repository.
+{{< /alert >}}
+
 ## Meta
 
 Meta is very straightforward. At first, it user the [PyYAML](https://pypi.org/project/PyYAML/) library to load the YAML config file from the current directory into a Python dictionary. This is an example of a config file that can be specified:

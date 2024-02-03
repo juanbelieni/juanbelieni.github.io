@@ -1,0 +1,28 @@
+<div id="page">
+  <article class="prose max-w-full dark:prose-invert">
+    {{ with .Title }}
+      <header>
+        <h1>{{ . | emojify }}</h1>
+      </header>
+    {{ end }}
+    <section>{{ .Content | emojify }}</section>
+  </article>
+
+  <section >
+    <h2 class="mt-8 text-2xl font-extrabold">Recent posts</h2>
+
+    {{ range where .Site.RegularPages "Section" "posts" | first 5 }}
+      {{ partial "article-link.html" . }}
+    {{ end }}
+  </section >
+
+
+  <section >
+    <h2 class="mt-8 text-2xl font-extrabold">Recent events</h2>
+
+    {{ range where .Site.RegularPages "Section" "events" | first 5 }}
+      {{ partial "article-link.html" . }}
+    {{ end}}
+  </section >
+</div>
+

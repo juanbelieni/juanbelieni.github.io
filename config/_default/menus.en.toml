@@ -4,16 +4,21 @@ pageRef = "posts"
 weight = 10
 
 [[main]]
+name = "Events"
+pageRef = "events"
+weight = 15
+
+[[main]]
 name = "Tags"
 pageRef = "tags"
 weight = 20
 
-[[main]]
-identifier = "search"
-weight = 50
-[main.params]
-action = "search"
-icon = "search"
+# [[main]]
+# identifier = "search"
+# weight = 50
+# [main.params]
+# action = "search"
+# icon = "search"
 
 [[footer]]
 name = "GitHub"

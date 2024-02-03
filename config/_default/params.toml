@@ -1,6 +1,6 @@
 colorScheme = "congo"
 
-enableSearch = true
+enableSearch = false
 enableCodeCopy = true
 enableImageLazyLoading = true
 
@@ -15,7 +15,13 @@ showAppearanceSwitcher = true
 showScrollToTop = true
 
 [homepage]
+layout = "custom"
 showRecent = true
+
+[list]
+showSummary = true
+showTaxonomies = true
+
 
 [article]
 showTableOfContents = true

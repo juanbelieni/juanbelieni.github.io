@@ -1,8 +1,11 @@
 serve:
 	hugo serve --buildDrafts --buildFuture
 
-new: name
+post: name
 	hugo new posts/$name/index.md
+
+event: name
+	hugo new events/$name/index.md
 
 cspell:
 	cspell content/posts/**/*.md

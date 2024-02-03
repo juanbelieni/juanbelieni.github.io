@@ -5,10 +5,11 @@ tags:
 - Lean
 - Programming
 date: 2024-01-10
+summary: In this post, I will define the natural numbers using the Peano axioms and prove that the set of natural numbers $\N$ equipped with ordinary addition and multiplication is a commutative semiring.
 math: true
 ---
 
-In this post, I will define the natural numbers using using the [Peano axioms](https://en.wikipedia.org/wiki/Peano_axioms), which will be referred to here as Peano numbers, and prove that the set of natural numbers $\N$ equipped with ordinary addition and multiplication is a [commutative semiring](https://en.wikipedia.org/wiki/Semiring#Commutative_semirings), i.e., that $(\N, +, 0)$ and $(\N, \cdot, 1)$ are both [commutative monoids](https://en.wikipedia.org/wiki/Monoid#Commutative_monoid) such that $a \cdot 0 = 0$ and $a \cdot (b + c) = a \cdot b + a \cdot c$.
+In this post, I will define the natural numbers using the [Peano axioms](https://en.wikipedia.org/wiki/Peano_axioms), which will be referred to here as Peano numbers, and prove that the set of natural numbers $\N$ equipped with ordinary addition and multiplication is a [commutative semiring](https://en.wikipedia.org/wiki/Semiring#Commutative_semirings), i.e., that $(\N, +, 0)$ and $(\N, \cdot, 1)$ are both [commutative monoids](https://en.wikipedia.org/wiki/Monoid#Commutative_monoid) such that $a \cdot 0 = 0$ and $a \cdot (b + c) = a \cdot b + a \cdot c$.
 
 The purpose of this post is to explore Lean's capabilities in helping prove some simple theorems related to algebra.
 
