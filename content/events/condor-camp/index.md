@@ -1,5 +1,5 @@
 ---
-title: 'Condor Camp'
+title: Condor Camp
 date: 2024-02-21
 ---
 

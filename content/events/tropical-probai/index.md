@@ -1,5 +1,5 @@
 ---
-title: 'Tropical ProbAi'
+title: Tropical ProbAi
 date: 2024-01-29
 ---
 

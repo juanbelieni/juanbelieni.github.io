@@ -1,5 +1,5 @@
 ---
-title: 'EAGxLATAM'
+title: EAGxLATAM
 date: 2024-02-22
 ---
 
