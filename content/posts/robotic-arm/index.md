@@ -10,7 +10,7 @@ The robotic arm built in this article is a simple n-joints arm that can be rotat
 
 The objective here is to use concepts of optimization to make the arm follow a moving target (in this case, the mouse cursor).
 
-<!-- more -->
+<!--more-->
 
 ## The robotic arm
 

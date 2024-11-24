@@ -1,6 +1,10 @@
 ---
 title: ML4Good
 date: 2024-07-28
+tags:
+- ai safety
+- ai
+- machine learning
 ---
 
 [ML4Good](ml4good.org) is a bootcamp focused on AI Safety upskilling, including workshops on interpretability, alignment and governance of artificial intelligence.

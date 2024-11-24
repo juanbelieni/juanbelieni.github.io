@@ -3,6 +3,7 @@ colorScheme = "congo"
 enableSearch = false
 enableCodeCopy = true
 enableImageLazyLoading = true
+enableQuicklink = true
 
 [header]
 layout = "hybrid"
@@ -30,9 +31,6 @@ showReadingTime = false
 showWordCount = true
 showPagination = true
 showAuthor = false
-
-[outputs]
-home = ["HTML", "RSS", "JSON"]
 
 [verification]
 google = "d-YbOFu2nkyxHfUzEkdaGfe-8awI9qvFcCxNS5mXBD8"
