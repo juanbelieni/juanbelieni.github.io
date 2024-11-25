@@ -1,6 +1,10 @@
 serve:
 	hugo serve --buildDrafts --buildFuture
 
+serve-prod:
+	hugo --minify
+	miniserve public
+
 post: name
 	hugo new posts/$name/index.md
 
