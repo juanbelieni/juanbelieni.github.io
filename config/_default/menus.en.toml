@@ -13,7 +13,7 @@ name = "🛠️ Projects"
 pageRef = "projects"
 weight = 15
 
-[[main]]
-name = "🏷️ Tags"
-pageRef = "tags"
-weight = 20
+# [[main]]
+# name = "🏷️ Tags"
+# pageRef = "tags"
+# weight = 20
