@@ -7,7 +7,7 @@ tags:
 - machine learning
 ---
 
-[ML4Good](ml4good.org) is a bootcamp focused on AI Safety upskilling, including workshops on interpretability, alignment and governance of artificial intelligence.
+[ML4Good](https://ml4good.org) is a bootcamp focused on AI Safety upskilling, including workshops on interpretability, alignment and governance of artificial intelligence.
 
 <!--more-->
 

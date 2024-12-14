@@ -8,7 +8,7 @@ tags:
 - math
 ---
 
-[Tropical ProbAi](tropical.probabilistic.ai) was a event about probabilistic artificial intelligence that occurred at FGV/EMAp in Rio de Janeiro at the end of January 2024. It had lecturers from MIT, Meta, USP, etc.
+[Tropical ProbAi](https://tropical.probabilistic.ai) was a event about probabilistic artificial intelligence that occurred at FGV/EMAp in Rio de Janeiro at the end of January 2024. It had lecturers from MIT, Meta, USP, etc.
 
 <!--more-->
 
