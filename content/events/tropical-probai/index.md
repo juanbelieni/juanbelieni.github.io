@@ -14,4 +14,8 @@ tags:
 
 If you want to check the program: https://tropical.probabilistic.ai/program.
 
-![Photo of the participants](photo.webp "Photo of the participants (including me :cat:)")
+{{< figure
+    src="photo.webp"
+    alt="Photo of the participants"
+    caption="Photo of the participants (including me :cat:)"
+>}}

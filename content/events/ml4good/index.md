@@ -14,4 +14,8 @@ tags:
 I participated on the Brazil 2024 edition, where I planned a [course on mechanistic interpretability](https://impact-rio.github.io/mech-interp-course).
 
 
-![Photo of the participants](photo.webp "Photo of the participants (including me :cat:)")
+{{< figure
+    src="photo.webp"
+    alt="Photo of the participants"
+    caption="Photo of the participants (including me :cat:)"
+>}}

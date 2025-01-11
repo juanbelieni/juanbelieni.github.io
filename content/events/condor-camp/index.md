@@ -11,4 +11,8 @@ tags:
 
 <!--more-->
 
-![Photo of the participants](photo.webp "Photo of the participants (and some awesome mariachis! :mexico:)")
+{{< figure
+    src="photo.webp"
+    alt="Photo of the participants"
+    caption="Photo of the participants (and some awesome mariachis! :mexico:)"
+>}}

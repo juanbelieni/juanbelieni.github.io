@@ -13,7 +13,7 @@ showTitle = true
 showCopyright = true
 showThemeAttribution = true
 showAppearanceSwitcher = true
-showScrollToTop = true
+showScrollToTop = false
 
 [homepage]
 layout = "custom"
@@ -25,7 +25,7 @@ showTaxonomies = true
 
 
 [article]
-showTableOfContents = true
+showTableOfContents = false
 showTaxonomies = true
 showReadingTime = false
 showWordCount = true

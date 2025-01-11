@@ -12,7 +12,10 @@ Throughout 2023, I did a lot of changes on my Linux setup, the major one being m
 
 At the end of 2022, I migrated to Arch Linux, and I think I will continue to use it this year, since I don't have the time to distro hop in the next months. However, If I would change, maybe I would try some Arch-based distro, Void Linux, NixOS or Gentoo. But the main reasons I will continuing using it are related to the package management and the wiki, they are still unbeatable for me.
 
-![I use Arch, btw](https://i.kym-cdn.com/entries/icons/original/000/038/795/tco_-_2021-11-09T131430.682.jpg)
+{{< figure
+    src="https://i.kym-cdn.com/entries/icons/original/000/038/795/tco_-_2021-11-09T131430.682.jpg"
+    alt="I use Arch, btw"
+>}}
 
 ## Window manager
 
@@ -26,7 +29,10 @@ Another big change I made and one that I will maybe maintain this year is my new
 
 Fortunately, I found [Helix](https://helix-editor.com/). The developers describe it as a "post-modern text editor", and it's developed entirely in Rust. This text editor can be described as if NeoVim and [Kakoune](https://kakoune.org/) had a child, given that it is a modal editor where you first select, then apply a modification. Helix also has a lot of builtin features, like language server support, tree sitter integration, fuzzy finder, etc.
 
-![Helix editor](https://helix-editor.com/signature-help.gif)
+{{< figure
+    src="https://helix-editor.com/signature-help.gif"
+    alt="Helix editor"
+>}}
 
 The good part is that the configuration file tends to be very minimal, because it already have sane defaults for a modern text editor. For exemple, this is my current configuration file:
 

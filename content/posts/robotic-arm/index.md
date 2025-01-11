@@ -14,7 +14,10 @@ The objective here is to use concepts of optimization to make the arm follow a m
 
 ## The robotic arm
 
-![GLaDOS](https://i.imgur.com/V15B9ja.gif)
+{{< figure
+    src="https://i.imgur.com/V15B9ja.gif"
+    alt="GLaDOS"
+>}}
 
 The robotic arm is a simple n-joints arm that can be rotated in two directions, i.e., its state is defined as $s = \\{ \theta_1, \cdots, \theta_n \\}$, where $\theta_i$ is the angle of the $i$-th joint. Each segment of the arm will be represented by a line of length $l_i$, where $l_i$ is the length of the $i$-th segment.
 
@@ -108,7 +111,10 @@ For stability reasons, the gradient is normalized inside the simulation loop. Th
 
 The following gif shows the robotic arm moving:
 
-![Robotic arm](https://i.imgur.com/49BNAeh.gif")
+{{< figure
+    src="https://i.imgur.com/49BNAeh.gif"
+    alt="Robotic arm"
+>}}
 
 I confess this robotic arm is not very realistic, but it is a good example of how to use optimization to control a system. If you want to contribute to this project, feel free to open a pull request or a issue in the GitHub repository.
 

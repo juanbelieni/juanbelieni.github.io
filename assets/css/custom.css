@@ -1,0 +1,30 @@
+.max-w-prose,
+.prose {
+  max-width: 100% !important;
+}
+
+figure {
+  max-width: 40rem;
+}
+
+a[href^="/tags"] {
+  border: none;
+  margin-left: 0;
+  padding-left: 0;
+  padding-right: 0.5rem;
+}
+
+article.flex-row {
+  padding: 1rem;
+  border-radius: 4px;
+  background-color: #0001;
+
+
+  &:is(.dark *) {
+    background-color: #FFF1;
+  }
+}
+
+span.icon {
+  vertical-align: middle;
+}

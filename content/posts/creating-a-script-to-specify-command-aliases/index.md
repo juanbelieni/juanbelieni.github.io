@@ -11,7 +11,7 @@ For the most part of the programming projects I am working, I like to specify so
 
 On other languages, I usually _make_ the use of [GNU Make](https://www.gnu.org/software/make/), which can be not ideal for some specific cases, like when it is needed to specify arguments. In fact, [it is possible to pass arguments](https://stackoverflow.com/questions/2826029/passing-additional-variables-from-command-line-to-make), but it is still not the best solution for me, because I don't have the control over which parameters are allowed to be passed. I even tried to use Python with [argparse](https://docs.python.org/3/library/argparse.html) library directly one time, but they are totally overkill for this task.
 
-Moreover, it would be nice to be able to see a help description with the scripts and which arguments can be passed. Because of that, I created a very simple script named Meta[^meta].
+Moreover, it would be nice to be able to see a help description with the scripts and which arguments can be passed. Because of that, I created a very simple script named Meta.
 
 
 {{< alert >}}
@@ -54,12 +54,10 @@ class Meta:
 
 Finally, the `Meta` instance is used to match the arguments passed to the Meta script (available in Python via the `sys.argv` list) and run the correct command by providing the script command with the correct argument values. This means that the arguments must be passed to the Meta script in the same order as specified in the config file.
 
-The complete implementation can be found [here](https://github.com/juanbelieni/meta/blob/main/meta.py).
+The complete implementation can be found [here](https://github.com/juanbelieni/meta/blob/232c4530f941609db3e8bb090584ed2b1fcee181/meta.py).
 
 ## Considerations and further work
 
 I started to write this script just to help me organize the commands of the repository for this new blog I'm starting. Futhermore, It was made in Python because I was planning to use the argparse library as a back-end to specify the commands, but I choose to not use it because I wanted to have more control over how it works. Because of this, I still have to write better error messages and improve the help description.
 
 In the future, I plan to evaluate if handling the arguments as positional is the best option, because I want a way to specify them through their names.
-
-[^meta]: Not to be confused with the tech company. Meta is not from Meta :wink:.
