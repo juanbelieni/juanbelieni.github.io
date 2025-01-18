@@ -1,0 +1,22 @@
+{{ $id := .Get "id" }}
+{{ $chart := .Get "chart" }}
+{{ $caption := .Get "caption" }}
+{{ $height := .Get "height" }}
+
+<figure class="max-w-full">
+  <div id="chart-{{ $id }}" class="w-full" style="height: {{ $height }}"></div>
+  {{ with $caption }}<figcaption class="text-center">{{ $caption | markdownify }}</figcaption>{{ end }}
+</figure>
+
+<script>
+  (() => {
+    const chartString = Uint8Array.from(atob("{{ $chart }}"), c => c.charCodeAt(0));
+    const chartJson = JSON.parse(pako.inflate(chartString, { to: 'string' }));
+
+    vegaEmbed(
+      "#chart-{{ $id }}",
+      chartJson,
+      {renderer: "svg"}
+    );
+  })()
+</script>

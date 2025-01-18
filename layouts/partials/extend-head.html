@@ -1,3 +1,82 @@
+<!-- Math -->
+
 {{ if or .Params.math .IsHome }}
-{{ partial "math.html" . }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+  integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous" />
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+  integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false},
+      ],
+      throwOnError: false,
+    });
+  });
+</script>
 {{ end }}
+
+<!-- Chart -->
+
+{{ if .Params.chart }}
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+<script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
+{{ end }}
+
+<!-- Footnote popup -->
+
+<style>
+  .footnote-popup {
+    position: absolute;
+    display: none;
+    z-index: 1000;
+    width: min(300px, calc(100vw - 2 * 20px));
+  }
+
+  .footnote-popup p {
+    overflow-wrap: break-word;
+  }
+</style>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const popup = document.createElement("div");
+    popup.id = "footnote-popup";
+    popup.className = "footnote-popup rounded-md px-4 py-3 text-sm shadow-lg bg-neutral-100 dark:bg-neutral-700";
+    document.body.appendChild(popup);
+
+    const footnotes = document.querySelectorAll(".footnote-ref");
+
+    footnotes.forEach(footnote => {
+      footnote.addEventListener("mouseenter", (event) => {
+        const refId = footnote.getAttribute("href").substring(1);
+        const content = document.getElementById(refId)?.innerHTML || "No content found";
+
+        popup.innerHTML = content;
+        popup.style.display = "block";
+
+        const rect = footnote.getBoundingClientRect();
+        const top = window.scrollY + rect.bottom + 5;
+        const left = Math.max(20, Math.min(window.scrollX + rect.left - 150, window.innerWidth - 320));
+        console.log(left, window.innerWidth)
+    
+        popup.style.top = `${top}px`;
+        popup.style.left = `${left}px`;
+      });
+
+      footnote.addEventListener("mouseleave", () => {
+        popup.style.display = "none";
+      });
+    });
+  });
+</script>

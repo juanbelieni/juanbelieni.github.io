@@ -6,7 +6,9 @@
   <section >
     <h2 class="text-2xl font-extrabold" style="margin-top: 4rem">Recent posts</h2>
 
-    {{ range where .Site.RegularPages "Section" "posts" | first 5 }}
+    {{ $posts := where .Site.RegularPages "Section" "posts" }}
+    {{ $posts := where $posts "Params.draft" "ne" true }}
+    {{ range $posts | first 5 }}
       {{ partial "article-link.html" . }}
     {{ end }}
   </section >
