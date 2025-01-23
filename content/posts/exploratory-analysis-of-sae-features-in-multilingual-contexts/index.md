@@ -18,11 +18,29 @@ This blogpost is part of my project completed during the [AI Safety Fundamentals
 
 ## Preliminaries
 
+### Sparse autoencoders
+
+SAEs are a specialized form of autoencoders that generate a sparse representation of vectors. This process typically involves learning two functions, $f_\text{enc}: \R^{n \times m}$ (encoder) and $f_\text{dec}: \R^{m \times n}$ (decoder), where $m$ denotes the number of features, with $m$ being significantly greater than $n$[^gated-saes]. More specifically, the decoder is defined as $f_\text{dec}(\mathbf{f}) = x_\text{dec} + \sum_{i=1}^m f_i \mathbf{d}_i$, where $\mathbf{f}$ is the vector of features and $\mathbf{d}_i$ denotes the feature directions.
+
+{{% figure
+    src="https://adamkarvonen.github.io/images/sae_intuitions/SAE_diagram.png"
+    caption="Diagram of the SAE architecture. Source: Adam Karvonen[^intuitive-saes]."
+%}}
+
+During the learning phase, the SAE is encouraged to accurately reconstruct the original vector by minimizing the L2 loss associated with the difference between the reconstruction and the original. Additionally, it aims to achieve this using the fewest number of features possible by minimizing the L1 loss on the features. This trade-off between accurate reconstructions and sparse features is balanced through a sparsity coefficient on the L1 loss, defined as a hyperparameter.
+
+
+### Parallel corpora
+
+Parallel corpora are datasets consisting of aligned text pairs in two or more languages, enabling direct mapping between linguistic units across languages. Formally, a parallel corpus can be represented as a set of tuples, $\{ (s_1, t_1), (s_2, t_2), \dots, (s_k, t_k) \}$, where $s_i$ and $t_i$ denote sentences or phrases in source and target languages, respectively. These datasets are critical for tasks like machine translation and cross-lingual transfer learning. An example of parallel corpora is the FLORES-200[^flores-200], which includes sets of translations for over 200 high- and low-resource languages and will be utilized for extracting sentences for this exploratory analysis.
+
 ## Setup
 
-I analyzed two language SAEs available in [SAELens](https://jbloomaus.github.io/SAELens/sae_table): `gpt2-small-res-jb`, with $d_\text{SAE} = 24576$, and `pythia-70m-deduped-res-sm`, with $d_\text{SAE} = 32768$, both trained on the residual stream of the respective models.
+I analyzed two SAEs available in the [SAELens](https://jbloomaus.github.io/SAELens/sae_table) library: `gpt2-small-res-jb` (trained on GPT-2 Small’s residual stream) and `pythia-70m-deduped-res-sm` (trained on Pythia-70M’s residual stream). The GPT-2 SAE has a dictionary size of 24,576 and operates on the `hook_resid_pre` activation at each of the model’s 12 layers, while the Pythia SAE uses 32,768 features and targets the `hook_resid_post` activation across its 6 layers.
 
-The analysis spans 12 languages: English, German, Russian, Icelandic, Spanish, Portuguese, French, Chinese, Japanese, Korean, Hindi, and Arabic. I don't know if this is the best set of languages, but I tried to encompass languages with diverse scripts, as well as both high- and low-resource languages. The sentences for each language are drawn from the FLORES dataset.
+The analysis covered 12 languages from the FLORES-200 dataset: English, German, Russian, Icelandic, Spanish, Portuguese, French, Chinese, Japanese, Korean, Hindi, and Arabic. This selection balances script diversity (Latin, Cyrillic, Hanzi, Hangul, Devanagari, Arabic) and resource availability, ranging from high-resource languages like English to medium-resource ones like Icelandic. Parallel sentences from the FLORES-200 dev split were used, ensuring direct comparability between language pairs. For tokenization, I employed each base model’s native tokenizer.
+
+Activations were computed using TransformerLens to extract residual stream outputs, with SAE reconstructions generated via the SAELens library. For each language and layer, I recorded three metrics: 1) the total activation magnitude per feature, 2) the activation frequency (the number of tokens where a feature was activated), and 3) the reconstruction MSE.
 
 ## Exploratory analysis
 
@@ -86,6 +104,12 @@ Another potential visualization is presented below. I plotted the variance in th
   height="20rem"
 >}}
 
-[^scaling]: Templeton, et al., "Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet", Transformer Circuits Thread, 2024, https://transformer-circuits.pub/2024/scaling-monosemanticity.
+[^scaling]: Templeton, et al., "Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet", Transformer Circuits Thread, 2024, <https://transformer-circuits.pub/2024/scaling-monosemanticity>.
 
-[^sae-dataset-dependent]: Kissane, Connor, et al., “SAEs Are Highly Dataset Dependent: A Case Study on the Refusal Direction.” Lesswrong.com, 2023, https://www.lesswrong.com/posts/rtp6n7Z23uJpEH7od/saes-are-highly-dataset-dependent-a-case-study-on-the.
+[^sae-dataset-dependent]: Kissane, Connor, et al., “SAEs Are Highly Dataset Dependent: A Case Study on the Refusal Direction.” Lesswrong.com, 2023, <https://www.lesswrong.com/posts/rtp6n7Z23uJpEH7od/saes-are-highly-dataset-dependent-a-case-study-on-the>.
+
+[^gated-saes]: Rajamanoharan, Senthooran, et al. “Improving Dictionary Learning with Gated Sparse Autoencoders.” ArXiv.org, 2024, <https://arxiv.org/abs/2404.16014>.
+
+[^intuitive-saes]: Karvonen, Adam. “An Intuitive Explanation of Sparse Autoencoders for LLM Interpretability.” Adam Karvonen, 11 June 2024, <https://adamkarvonen.github.io/machine_learning/2024/06/11/sae-intuitions.html>.
+
+[^flores-200]: NLLB Team, et al. “No Language Left Behind: Scaling Human-Centered Machine Translation.” ArXiv:2207.04672 [Cs], 25 Aug. 2022, <https://arxiv.org/abs/2207.04672>.

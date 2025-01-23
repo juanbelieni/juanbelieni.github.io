@@ -10,3 +10,10 @@ tag = "tags"
 
 [outputs]
 home = ["HTML", "RSS", "JSON"]
+
+[markup]
+defaultMarkdownHandler = "pandoc"
+
+[security]
+[security.exec]
+allow = ['^(dart-)?sass(-embedded)?$', '^go$', '^git$', '^npx$', '^postcss$', '^tailwindcss$', '^pandoc$']
