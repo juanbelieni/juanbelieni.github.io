@@ -1,5 +1,5 @@
 ---
-title: Exploratory Analysis of SAE Features in Multilingual Contexts
+title: Exploratory Analysis of Multilingual SAE Features
 summary: Recent research from Anthropic suggests that Sparse Autoencoder (SAE) features can be multilingual, activating for the same concept across multiple languages. However, if multilingual features are scarce and not as good as monolingual ones, SAEs could have their robustness undermined, leaving them vulnerable to failures and adversarial attacks in languages not well-represented by the model. In this post, I present findings from an exploratory analysis conducted to assess the degree of multilingualism in SAE features.
 date: 2025-02-01
 tags:
