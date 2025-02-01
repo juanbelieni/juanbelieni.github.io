@@ -1,13 +1,12 @@
 ---
 title: Exploratory Analysis of SAE Features in Multilingual Contexts
 summary: Recent research from Anthropic suggests that Sparse Autoencoder (SAE) features can be multilingual, activating for the same concept across multiple languages. However, if multilingual features are scarce and not as good as monolingual ones, SAEs could have their robustness undermined, leaving them vulnerable to failures and adversarial attacks in languages not well-represented by the model. In this post, I present findings from an exploratory analysis conducted to assess the degree of multilingualism in SAE features.
-date: 2025-01-11
+date: 2025-02-01
 tags:
 - ai-safety
 - visualization
 chart: true
 math: true
-draft: true
 ---
 
 Recent research from Anthropic[^scaling] suggests that Sparse Autoencoder (SAE) features can be multilingual, activating for the same concept across multiple languages. However, if multilingual features are scarce and not as good as monolingual ones, SAEs could have their robustness undermined, leaving them vulnerable to failures and adversarial attacks in languages not well-represented by the model. In this post, I present findings from an exploratory analysis conducted to assess the degree of multilingualism in SAE features.
@@ -44,6 +43,8 @@ The code for this project can be found at <https://github.com/juanbelieni/aisf-p
 
 ## Exploratory analysis
 
+### Number of tokens
+
 Due to the higher availability of English texts in the training phase of most language models, tokenization tends to produce fewer tokens for sentences in English, while generating many more tokens for other languages, especially those that use a different writing script.
 
 Below you can see this behavior for both models, where English and languages that uses Latin script have fewer tokens produced by the tokenizer. To account for the extra number of tokens produced by the tokenizer, I will normalize some metrics by the number of tokens produced for each language.
@@ -64,13 +65,15 @@ Below you can see this behavior for both models, where English and languages tha
   height="20rem"
 >}}
 
+### Monolingual features
+
 The number of monolingual features, which I will define as features that activate more than 50% of the time for one specific language, is also presented below. Notably, GPT-2 exhibits a high number of English monolingual features, particularly in its last layers. In contrast, the monolingual features in the first layers are dominated by languages with different writing scripts. This distinction indicates that the latent space in GPT-2's initial layers is structured more around grammatical properties than semantic ones, and the SAE captures this characteristic.
 
 {{<
   chart
   id="mono-feat-langs-gpt2"
   chart="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"
-  caption="Number of latents that activates more than 50% of the time for one specific language in GPT-2."
+  caption="Number of features that activates more than 50% of the time for one specific language in GPT-2."
   height="30rem"
 >}}
 
@@ -82,7 +85,7 @@ This suggests that the distribution of monolingual features in SAEs can vary wid
   chart
   id="mono-feat-langs-pythia"
   chart="eJy1Wstu4zYU3ecrBGGWGUcP6+HsBoO208eiaBddFIOClhmbrUS6EuVMMMi/D00/JMeHxAgX3jghKfHw3nvugxS/3gVB+K6rNrxh4WMQbrTedo8PDzu+ZrO10Jt+ORPq4fCA7X1fC80fdtksiWbx7N9OyfB+P0ml5JNYmzm+mpZp7wR/PrcO41rIXvXdJy7WG23G0ii6vx7+S6z05jBqB1/N76uFWDHNBgDJGr5f8r73fZRmcbyIq5IvqyjN8+WKpQmPq7xcxvGqLMOLSTquu2Gi75vgMfj7uNaTSHbVvbSSJGl+P3TXTO41Ef4g17XoNuHF0AtvzVg26mvUitf757cveiNYeBx5vXcDxkUJ8D5uhOQdvwFeViymyZfQ8HIE5xFvTlRnHgG8n3jbMHkDbeZRAeB+rrj5dyUqhBjREMs5APyFbZlLoSkNL5nHAPBPg+fgC9GA8yibKCBRoXkK8P7ou05gxsQ0uCIBcB9atsRsIXqfiYVT+Um0X4HU6aELUZ0pYotbnURnyEoknRuOSM1ijqT7XbW6X/e38YYFyn4eb6BmoxjhedIDVaMFCp8eehLx0ggR5pMwzncTNFRLeL2dXE1MMx/R/wqU3H9VLb9JqE5Q7PT4AlG4Egnn0SVRujhFtvMlWmJmgFxxx05qHREjX/ix5bK6SRkPE5G77iTm9QVC84QxIlwcoSreg0d0hTiZyk1qGQHjtNt85F0KjC2eXRgRMIF1oNv5iN6QQL74CxciZXLk7j7GEF0iS1Ah7wOk6jRDgO7kRw1ocN/nNyE1I8GzAj8kVcoIJV1vxUQNpdm0REGNpCnSqdvxiSYskRc6y11iUMtRkvAkJSJX0hip0l1RUDfSsF5yE4W4d0jgSZbf+agFIdqLeeprquelKMf7JaRCltOcnbphSRCcO0UQKTNfIMo4vZ2a/+BBndv9qMkIstMNRy1fULZ1qpIINkea9Ow0yY6HkqxTOGoKmnZGQJUtRy7nLSDIxJyUY4nyJfOJB4LEmBIX2cTvU9TvKfDE04NHPcKaWEUQxYNFhNsbqNUmFM7rDUTEFDmDh57EkmWBwrRbndRjgqhA5vOQk/pxCsVONze/J7bYv5/vTh/tzVRqJeToekGlatWGo/sFT4LXq/1MdgEniLCrWM1Hz5mulWqYkOHwQd/2Xm1uApTcAqTHAEgbgIItuA64AeZ5AM8EAkCawFGLBojPwbDROfd9HlnDXvOwlypao6Gler6yfqiFtvoMfzNq7tl6wAz1y9aOSNUIyerDu8c3wy9jW7Evoru0yY7VRoA3NonGK4/HjWTcSMeN+biRDVJeCTLiy56WSMDL/qN0//dMmmeYFjt+KeILpOPBSa6n//im3z392Qs2p4sz9raMsdBxfWHD2v8G1xBS83araqbtjI2SSit5MlRYm/dMv257fuw5YTPDreGizJa1rBlMcpZsaShs9cbX3Px3luB0H8e+908yckFe80pf2tuq5629D64LmXla4lYZ6S6jxP7XPhrqlsnuSbXN9aKfRK15e7kGu9Dxih3TPh8vJI20fvf6DeweQfs="
-  caption="Number of latents that activates more than 50% of the time for one specific language in Pythia."
+  caption="Number of features that activates more than 50% of the time for one specific language in Pythia."
   height="30rem"
 >}}
 
@@ -103,6 +106,60 @@ Another potential visualization is presented below. I plotted the variance in th
   caption="Mean variance in the frequency of features across languages for Pythia."
   height="20rem"
 >}}
+
+### Multilingual features
+
+On the following tables, I present the language groups with the highest number of features that activate at least 5% of the time for each language in the group.
+
+For GPT-2 (in the table below), we can see that the first layers have more features focused on languages with non-Latin scripts (as we have already seen), while the following layers have more features focused on languages with Latin scripts (both mono- and multilingual).
+
+|Layer|1st|2nd|3rd|4th|5th|
+|--|--|--|--|--|--|
+0|Arabic, Hindi, Korean, Russian|Chinese, Japanese|Hindi, Korean, Russian|English, French, German, Icelandic, Portuguese, Spanish|Hindi|
+1|Chinese, Japanese|Hindi|English, French, German, Icelandic, Portuguese, Spanish|English, French, German, Portuguese, Spanish|Japanese|
+2|Chinese, Japanese|Hindi|English, French, German, Icelandic, Portuguese, Spanish|English, French, German, Portuguese, Spanish|English, French, Portuguese, Spanish|
+3|Chinese, Japanese|English, French, German, Icelandic, Portuguese, Spanish|English, French, German, Portuguese, Spanish|English|English, French, Portuguese, Spanish|
+4|English|English, French, German, Portuguese, Spanish|English, French, German, Icelandic, Portuguese, Spanish|Chinese, Japanese|English, French, Portuguese, Spanish|
+5|English|English, French, German, Icelandic, Portuguese, Spanish|English, French, German, Portuguese, Spanish|English, French, Portuguese, Spanish|French, German, Icelandic, Portuguese, Spanish|
+6|English|English, French, German, Portuguese, Spanish|English, French, German, Icelandic, Portuguese, Spanish|English, French, Portuguese, Spanish|French, German, Icelandic, Portuguese, Spanish|
+7|English|English, French, German, Portuguese, Spanish|English, French, German, Icelandic, Portuguese, Spanish|English, French, Portuguese, Spanish|English, German|
+8|English|English, French, German, Portuguese, Spanish|English, French, German, Icelandic, Portuguese, Spanish|English, French, Portuguese, Spanish|English, French|
+9|English|English, French, German, Portuguese, Spanish|English, French, German, Icelandic, Portuguese, Spanish|English, French, Portuguese, Spanish|English, French|
+10|English|English, French, German, Portuguese, Spanish|English, French|English, French, Portuguese, Spanish|English, German|
+11|English|English, French|English, German|English, French, Portuguese, Spanish|English, French, German, Portuguese, Spanish|
+
+The results for Pythia also follow what we would expect based on the previous visualizations, where the first and last layers have more monolingual features focused on English. However, the SAE for layer 2 has a surprisingly high amount of full multilingual features, with the first language group containing all the languages I tested.
+
+**Pythia**:
+
+|Layer|1st|2nd|3rd|4th|5th|
+|--|--|--|--|--|--|
+0|English|English, French, German, Icelandic, Portuguese, Spanish|English, French, German, Portuguese, Spanish|Spanish|German|
+1|English, French, German, Icelandic, Portuguese, Spanish|English|English, French, German, Portuguese, Spanish|English, French, Portuguese, Spanish|English, French, German, Portuguese, Russian, Spanish|
+2|Arabic, Chinese, English, French, German, Hindi, Icelandic, Japanese, Korean, Portuguese, Russian, Spanish|Arabic, Chinese, French, German, Hindi, Icelandic, Japanese, Korean, Portuguese, Russian, Spanish|English|English, French, German, Portuguese, Spanish|English, French, German, Icelandic, Portuguese, Spanish|
+3|English, French, Portuguese, Spanish|English, French, German, Icelandic, Portuguese, Spanish|English, French, German, Portuguese, Spanish|English|Portuguese|
+4|English|English, French, Portuguese, Spanish|English, French, German, Portuguese, Spanish|English, French, German, Icelandic, Portuguese, Spanish|English, French|
+5|English|English, French|Chinese, English, Japanese|English, Japanese|English, French, Portuguese, Spanish|
+
+## Conclusion
+
+The exploratory analysis conducted on two SAE models (GPT-2 and Pythia) across 12 languages revealed several insights into the multilingual capabilities of SAE features. Both models exhibited a dominance of monolingual features, particularly for English, with these features being more prevalent in later layers. Conversely, features for languages using non-Latin scripts were more common in earlier layers, suggesting that SAEs may capture different types of linguistic information at different depths of the network.
+
+The analysis also highlighted a clear layer-wise progression in feature specialization. Early layers tended to capture language-agnostic or script-specific features, while later layers became increasingly specialized for English and other Latin-script languages. This suggests that SAEs may organize linguistic information hierarchically, with lower layers encoding more general features and higher layers encoding more language-specific or semantic features.
+
+While the study demonstrated that some features are shared across languages, the distribution of multilingual features was not uniform. Layers with higher variances in feature activation frequencies corresponded to those with more monolingual features, indicating that SAEs may not inherently encode a large number of fully multilingual features. Instead, the models appear to rely on a mix of monolingual and partially multilingual features, which could have implications for their robustness and generalization across languages.
+
+These results highlight the importance of understanding how SAEs encode linguistic information, especially in multilingual contexts. If multilingual features are scarce or less effective than monolingual ones, SAEs may struggle with robustness and generalization across languages, potentially making them vulnerable to failures or adversarial attacks. This raises critical questions about the design of SAEs for multilingual models and the need to ensure that they can effectively capture concepts across diverse linguistic representations.
+
+## Future Work
+
+1. **Investigating dataset influence.** The distribution of monolingual and multilingual features observed in this study may be influenced by the training data of the base models. For instance, GPT-2, being trained primarily on English text, exhibits a strong bias toward English features. Similarly, Pythia, which may have been trained on a more diverse dataset, shows a different distribution of monolingual and multilingual features. Future work could involve training SAEs on monolingual versus multilingual corpora and comparing the resulting feature distributions. This would help clarify whether the observed patterns are inherent to the SAE architecture or are shaped by the training data.
+
+1. **Exploring language groupings.** The language groupings identified in this study (e.g., Latin-script languages vs. non-Latin-script languages) suggest that SAE features may cluster around linguistic or typological similarities. Future work could explore this hypothesis further by analyzing whether languages with similar grammatical or typological properties share more features. For example, languages with similar word orders or morphological structures could be expected to share more features in certain layers. This could involve expanding the analysis to include more diverse language families and testing for correlations between feature sharing and linguistic properties.
+
+1. **Adversarial robustness in multilingual contexts.** The findings of this study raise concerns about the robustness of SAEs in multilingual contexts. If certain languages are underrepresented in the feature space, models may be more vulnerable to adversarial attacks or failures in those languages. Future work could investigate the susceptibility of SAEs to adversarial perturbations in underrepresented languages and explore strategies for mitigating these vulnerabilities. For example, techniques such as adversarial training or feature regularization could be used to promote more balanced feature distributions across languages.
+
+1. **Developing metrics for multilingual feature evaluation.** The analysis in this study relied on simple metrics such as feature activation frequency and monolingual feature counts. While these metrics provided valuable insights, they may not fully capture the complexity of multilingual feature sharing. Future work could involve developing more sophisticated metrics for evaluating the degree of multilingualism in SAE features, such as multilingual feature density or cross-lingual feature alignment. These metrics could help quantify the extent to which features are shared across languages and identify areas where models may be underperforming.
 
 [^scaling]: Templeton, et al., "Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet", Transformer Circuits Thread, 2024, <https://transformer-circuits.pub/2024/scaling-monosemanticity>.
 
