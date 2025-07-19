@@ -1,6 +1,6 @@
 ---
-title: EAGxLATAM
-date: 2024-02-22
+title: EAGxLATAM 2024
+date: 2024-02-16
 tags:
 - effective altruism
 ---

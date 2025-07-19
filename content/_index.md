@@ -2,10 +2,15 @@
 title: Home
 ---
 
-Hi! My name is Juan and I am a Data Science and AI undergrad student at [FGV EMAp](https://emap.fgv.br/en) in Rio de Janeiro, Brazil :brazil:. Here I will (try) to post about topics that I like and that I am studying, like machine learning, AI Safety, computer science, Linux, programming and math.
 
-{{< icon "github" >}} GitHub: [@juanbelieni](https://github.com/juanbelieni)
+<img src="photo.jpg" alt="Juan Belieni" style="width: 100%; max-width: 150px; border-radius: 50%; margin: auto;">
+
+Hi! My name is Juan and I am a MSc student in Applied Maths at [FGV EMAp](https://emap.fgv.br/en) in Rio de Janeiro, Brazil :brazil:. Here I will (try) to post about topics that I like and that I am studying, like machine learning, AI safety, computer science, Linux, programming and math. I am also a member of the [LANAIS](https://lanais.org/) team.
+
+{{< icon "github" >}} [GitHub](https://github.com/juanbelieni)
 \
-{{< icon "linkedin" >}} LinkedIn: [@juanbelieni](https://linkedin.com/in/juanbelieni)
+{{< icon "linkedin" >}} [LinkedIn](https://linkedin.com/in/juanbelieni)
 \
-{{< icon "email" >}} Email: [juanbelieni] @ [gmail.com]
+{{< icon "google-scholar" >}} [Google Scholar](https://scholar.google.com/citations?user=yRsXzGIAAAAJ&hl=en)
+\
+{{< icon "email" >}} [juanbelieni] @ [gmail.com]

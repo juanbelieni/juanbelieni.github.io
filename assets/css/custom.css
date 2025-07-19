@@ -1,3 +1,7 @@
+:root {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
 .max-w-prose,
 .prose {
   max-width: 100% !important;

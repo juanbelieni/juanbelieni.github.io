@@ -9,6 +9,6 @@ pageRef = "events"
 weight = 20
 
 [[main]]
-name = "Projects"
+name = "Projects & Publications"
 pageRef = "projects"
 weight = 30

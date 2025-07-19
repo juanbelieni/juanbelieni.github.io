@@ -1,6 +1,6 @@
 ---
-title: ML4Good
-date: 2024-07-28
+title: ML4Good Brazil 2024
+date: 2024-07-08
 tags:
 - ai safety
 - ai

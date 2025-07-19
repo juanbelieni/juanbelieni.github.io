@@ -1,3 +1,13 @@
+<!-- Font and styles -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+
+{{ with resources.Get "css/pandoc-highlighting.css" }}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ end }}
+
 <!-- Math -->
 
 {{ if or .Params.math .IsHome }}
@@ -71,7 +81,7 @@
         const top = window.scrollY + rect.bottom + 5;
         const left = Math.max(20, Math.min(window.scrollX + rect.left - 150, window.innerWidth - 320));
         console.log(left, window.innerWidth)
-    
+
         popup.style.top = `${top}px`;
         popup.style.left = `${left}px`;
       });

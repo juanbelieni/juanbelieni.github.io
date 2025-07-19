@@ -77,7 +77,7 @@ theorem add_associativity (a b c : Peano) : (a + b) + c = a + (b + c) := by
       _            = a + (b + S c')   := by rfl
 ```
 
-Here, `rfl` stands for reflexivity, a Lean tactic that tries to close the current goal using the reflexive property, and `ih` is the inductive hypothesis, defined as $a + b + c\' = a + (b + c\')$, where $c\'$ is a natural number s.t. its successor is equal to $c$. I also defined this theorem with `@[simp]`, which states that this theorem can be used by the [`simp`](https://leanprover-community.github.io/extras/simp.html) tactic to simplify the main goal.
+Here, `rfl` stands for reflexivity, a Lean tactic that tries to close the current goal using the reflexive property, and `ih` is the inductive hypothesis, defined as $a + b + c' = a + (b + c')$, where $c'$ is a natural number s.t. its successor is equal to $c$. I also defined this theorem with `@[simp]`, which states that this theorem can be used by the [`simp`](https://leanprover-community.github.io/extras/simp.html) tactic to simplify the main goal.
 
 #### Identity element
 
@@ -106,7 +106,8 @@ theorem left_add_identity (a : Peano) : _0 + a = a := by
 #### Commutativity
 
 The commutative property of addition can be divided into two steps:
-1. prove the property for a natural number $a$ and $1$ ($a + 1 = 1 + a$).
+
+1. Prove the property for a natural number $a$ and $1$ ($a + 1 = 1 + a$).
 2. From the last property, prove the same but for all pairs of natural numbers ($a + b = b + a$).
 
 The first step can be done with induction on the number $a$, very similar to the `left_add_identity` proof:
