@@ -11,7 +11,7 @@ figure {
   max-width: 40rem;
 }
 
-a[href^="/tags"] {
+a[href*="/tags/"] {
   border: none;
   margin-left: 0;
   padding-left: 0;
