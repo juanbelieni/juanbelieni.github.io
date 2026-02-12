@@ -1,25 +1,39 @@
 <div id="page">
-  <article class="prose max-w-full dark:prose-invert">
+  <article class="prose max-w-full dark:prose-invert" style="max-width: 40rem !important; margin: auto;">
     <section>{{ .Content | emojify }}</section>
   </article>
 
-  <section >
-    <h2 class="text-2xl font-extrabold" style="margin-top: 4rem">Recent posts</h2>
+  <section class="mt-12">
+    <h2 class="font-bold uppercase tracking-wider mb-2 text-neutral-500 dark:text-neutral-400">
+      Recent projects and publications
+    </h2>
+
+    {{ range where .Site.RegularPages "Section" "projects" | first 6 }}
+    {{ partial "compact-article-link.html" . }}
+    {{ end }}
+  </section>
+
+  <section class="mt-8">
+    <h2 class="font-bold uppercase tracking-wider mb-2 text-neutral-500 dark:text-neutral-400">
+      Recent events
+    </h2>
+
+    {{ range where .Site.RegularPages "Section" "events" | first 6 }}
+    {{ partial "compact-article-link.html" . }}
+    {{ end}}
+
+  </section>
+
+  <section class="mt-8">
+    <h2 class="font-bold uppercase tracking-wider mb-2 text-neutral-500 dark:text-neutral-400">
+      Recent posts
+    </h2>
 
     {{ $posts := where .Site.RegularPages "Section" "posts" }}
     {{ $posts := where $posts "Params.draft" "ne" true }}
-    {{ range $posts | first 5 }}
-      {{ partial "article-link.html" . }}
+    {{ range $posts | first 6 }}
+    {{ partial "compact-article-link.html" . }}
     {{ end }}
-  </section >
 
-
-  <section >
-    <h2 class="text-2xl font-extrabold" style="margin-top: 4rem">Recent events</h2>
-
-    {{ range where .Site.RegularPages "Section" "events" | first 5 }}
-      {{ partial "article-link.html" . }}
-    {{ end}}
-  </section >
+  </section>
 </div>
-
