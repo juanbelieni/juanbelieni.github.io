@@ -1,4 +1,4 @@
-colorScheme = "sapphire-dark"
+colorScheme = "Sapphire"
 
 enableSearch = false
 enableCodeCopy = true
@@ -17,7 +17,7 @@ showScrollToTop = false
 
 [homepage]
 layout = "custom"
-showRecent = true
+showRecent = false
 
 [list]
 showSummary = true
@@ -28,7 +28,7 @@ showTaxonomies = true
 showTableOfContents = false
 showTaxonomies = true
 showReadingTime = false
-showWordCount = true
+showWordCount = false
 showPagination = true
 showAuthor = false
 

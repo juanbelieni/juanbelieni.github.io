@@ -1,14 +1,16 @@
 [[main]]
+name = "Projects and Publications"
+pageRef = "projects"
+weight = 10
+
+[[main]]
 name = "Posts"
 pageRef = "posts"
-weight = 10
+weight = 30
 
 [[main]]
 name = "Events"
 pageRef = "events"
 weight = 20
 
-[[main]]
-name = "Projects & Publications"
-pageRef = "projects"
-weight = 30
+

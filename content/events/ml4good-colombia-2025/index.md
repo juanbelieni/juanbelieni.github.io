@@ -1,5 +1,6 @@
 ---
 title: ML4Good Colombia 2025
+location: "Bogotá"
 date: 2025-04-11
 tags:
 - ai safety
@@ -7,4 +8,4 @@ tags:
 - machine learning
 ---
 
-[ML4Good Colombia 2025](https://ml4good.org) was a bootcamp focused on AI Safety upskilling, where I participated as a teaching assistant.
+[ML4Good](https://ml4good.org) is a bootcamp focused on AI Safety upskilling, including workshops on interpretability, alignment and governance of artificial intelligence. In this edition, I participated as a teaching assistant.
