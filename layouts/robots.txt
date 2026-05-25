@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /resume
+
+Sitemap: {{ "sitemap.xml" | absURL }}
