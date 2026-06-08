@@ -1,6 +1,6 @@
 ---
 title: ML4Good Colombia 2025
-location: "Bogotá"
+location: "Bogotá, Colombia"
 date: 2025-04-11
 tags:
 - ai safety

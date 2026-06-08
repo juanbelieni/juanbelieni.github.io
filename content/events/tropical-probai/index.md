@@ -1,6 +1,6 @@
 ---
 title: Tropical ProbAi
-location: "Rio de Janeiro"
+location: "Rio de Janeiro, Brazil"
 date: 2024-01-29
 tags:
 - ai

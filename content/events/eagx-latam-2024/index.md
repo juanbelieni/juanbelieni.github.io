@@ -1,6 +1,6 @@
 ---
 title: EAGxLATAM 2024
-location: "Mexico City"
+location: "Mexico City, Mexico"
 date: 2024-02-16
 tags:
 - effective altruism

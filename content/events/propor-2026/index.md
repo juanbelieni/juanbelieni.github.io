@@ -1,6 +1,6 @@
 ---
 title: PROPOR 2026
-location: "Salvador"
+location: "Salvador, Brazil"
 date: 2026-04-13
 tags:
 - nlp

@@ -1,6 +1,6 @@
 ---
 title: Condor Camp
-location: "Mexico City"
+location: "Mexico City, Mexico"
 date: 2024-02-10
 tags:
 - ai safety

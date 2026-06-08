@@ -1,6 +1,6 @@
 ---
 title: CNMAC 2024
-location: "Porto de Galinhas"
+location: "Porto de Galinhas, Brazil"
 date: 2024-09-16
 tags:
 - math

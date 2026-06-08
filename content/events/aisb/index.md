@@ -1,6 +1,6 @@
 ---
 title: AI Security Bootcamp
-location: "London"
+location: "London, United Kingdom"
 date: 2025-08-04
 tags:
 - ai

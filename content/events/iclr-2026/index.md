@@ -1,6 +1,6 @@
 ---
 title: ICLR 2026
-location: "Rio de Janeiro"
+location: "Rio de Janeiro, Brazil"
 date: 2026-04-23
 tags:
 - machine learning

@@ -1,6 +1,6 @@
 ---
 title: ML4Good Brazil 2024
-location: "São Paulo"
+location: "São Paulo, Brazil"
 date: 2024-07-08
 tags:
 - ai safety
